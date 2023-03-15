@@ -14,6 +14,9 @@
 		DA9E82AD29C1D89900AC3566 /* DataStructuresVisualisedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E82AC29C1D89900AC3566 /* DataStructuresVisualisedTests.swift */; };
 		DA9E82B729C1D89900AC3566 /* DataStructuresVisualisedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E82B629C1D89900AC3566 /* DataStructuresVisualisedUITests.swift */; };
 		DA9E82B929C1D89900AC3566 /* DataStructuresVisualisedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E82B829C1D89900AC3566 /* DataStructuresVisualisedUITestsLaunchTests.swift */; };
+		DA9E82C829C1D91D00AC3566 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E82C729C1D91D00AC3566 /* Stack.swift */; };
+		DA9E82CA29C25AD700AC3566 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E82C929C25AD700AC3566 /* Queue.swift */; };
+		DA9E82CC29C2875D00AC3566 /* QueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E82CB29C2875D00AC3566 /* QueueView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		DA9E82B229C1D89900AC3566 /* DataStructuresVisualisedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStructuresVisualisedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9E82B629C1D89900AC3566 /* DataStructuresVisualisedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresVisualisedUITests.swift; sourceTree = "<group>"; };
 		DA9E82B829C1D89900AC3566 /* DataStructuresVisualisedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresVisualisedUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DA9E82C729C1D91D00AC3566 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		DA9E82C929C25AD700AC3566 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		DA9E82CB29C2875D00AC3566 /* QueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,9 @@
 		DA9E829A29C1D89600AC3566 /* DataStructuresVisualised */ = {
 			isa = PBXGroup;
 			children = (
+				DA9E82C629C1D8E400AC3566 /* Views */,
 				DA9E829B29C1D89600AC3566 /* DataStructuresVisualisedApp.swift */,
-				DA9E829D29C1D89600AC3566 /* ContentView.swift */,
+				DA9E82C529C1D8D600AC3566 /* Model */,
 				DA9E829F29C1D89900AC3566 /* Assets.xcassets */,
 				DA9E82A129C1D89900AC3566 /* Preview Content */,
 			);
@@ -125,6 +132,24 @@
 				DA9E82B829C1D89900AC3566 /* DataStructuresVisualisedUITestsLaunchTests.swift */,
 			);
 			path = DataStructuresVisualisedUITests;
+			sourceTree = "<group>";
+		};
+		DA9E82C529C1D8D600AC3566 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA9E82C729C1D91D00AC3566 /* Stack.swift */,
+				DA9E82C929C25AD700AC3566 /* Queue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA9E82C629C1D8E400AC3566 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA9E829D29C1D89600AC3566 /* ContentView.swift */,
+				DA9E82CB29C2875D00AC3566 /* QueueView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA9E829E29C1D89600AC3566 /* ContentView.swift in Sources */,
+				DA9E82C829C1D91D00AC3566 /* Stack.swift in Sources */,
 				DA9E829C29C1D89600AC3566 /* DataStructuresVisualisedApp.swift in Sources */,
+				DA9E82CC29C2875D00AC3566 /* QueueView.swift in Sources */,
+				DA9E82CA29C25AD700AC3566 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
