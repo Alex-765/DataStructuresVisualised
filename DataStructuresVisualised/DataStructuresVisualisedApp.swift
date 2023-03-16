@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+
+
 @main
 struct DataStructuresVisualisedApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootTabView()
         }
     }
 }

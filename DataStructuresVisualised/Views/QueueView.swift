@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct QueueView: View {
-    @State private var queue = Queue(length: 5)
+    @StateObject var queue = Queue(length: 7)
     @State private var input: String = ""
     @State private var peeking: String = ""
     
@@ -51,6 +51,7 @@ struct QueueView: View {
                         Text("Pop number")
                     }
                 }
+                Text(queue.message)
             }
         }
     }}

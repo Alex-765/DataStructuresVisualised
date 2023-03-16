@@ -7,46 +7,43 @@
 
 import Foundation
 
-class Queue{
+class Queue: ObservableObject{
     
     var length: Int
     var tail: Int
     var head: Int
     var stackArray: [Int]
+    @Published var message: String
     
     init(length: Int){
         self.length = length
         self.stackArray = Array(repeating: 0, count: length)
         self.tail = -1
         self.head = 0
+        self.message = ""
     }
     
     func pop(){
-        if self.tail > -1 {
-//            print("Value \(self.stackArray[self.head]) was popped out the list")
+        if self.head >= self.length {
+            self.message = "Unable to pop anymore"
+        }
+        else if self.tail > -1 && self.tail >= self.head{
+            self.message = "\(self.stackArray[self.head]) was popped"
             self.head += 1
         }
         else{
-//            print("Empty List. Cannot pop")
+            self.message = "Empty List. Cannot pop"
         }
     }
     
     func push(item: Int){
-        if self.tail < self.length - 1 {
+        if self.tail < self.length - 1{
             self.tail += 1
             self.stackArray[self.tail] = item
+            self.message = "\(String(stackArray[tail])) was pushed"
         }
         else{
-//            print("List Full. Cannot push")
-        }
-    }
-    
-    func peek(){
-        if tail == -1{
-//            print("Empty")
-        }
-        else{
-//            print("Value \(self.stackArray[head]) is at the start of the queue")
+            self.message = "List Full. Cannot push"
         }
     }
 }

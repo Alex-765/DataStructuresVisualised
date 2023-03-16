@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State private var stack = Stack(length: 5)
+struct StackView: View {
+    @StateObject var stack = Stack(length: 7)
     @State private var input: String = ""
     @State private var peeking: String = ""
     
@@ -47,17 +47,7 @@ struct ContentView: View {
                         Text("Pop number")
                     }
                 }
-                HStack{
-                    Button(action: { peeking = String(stack.peek()) }) {
-                        Text("Peek at number")
-                    }
-                }
-                if peeking != "0"{
-                    Text(peeking)
-                }
-                else{
-                    Text("Invalid")
-                }
+                Text(stack.message)
             }
         }
     }
@@ -65,6 +55,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        StackView()
     }
 }

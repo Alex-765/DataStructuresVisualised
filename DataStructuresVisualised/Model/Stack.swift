@@ -7,40 +7,38 @@
 
 import Foundation
 
-class Stack{
+class Stack: ObservableObject{
     var length: Int
     var tail: Int
     var stackArray: [Int]
+    @Published var message: String
     
     init(length: Int){
         self.length = length
         self.stackArray = Array(repeating: 0, count: length)
         self.tail = -1
+        self.message = ""
     }
     
     func pop(){
         if self.tail > -1 {
+            self.message = "\(String(stackArray[tail])) was popped"
             self.tail -= 1
         }
-        //    else{
-        //    }
+            else{
+                self.message = "Empty List. Cannot pop"
+            }
     }
     
     func push(item: Int){
-        if self.tail < self.length - 1 {
+        if self.tail < self.length - 1{
             self.tail += 1
             self.stackArray[self.tail] = item
+            self.message = "\(String(stackArray[tail])) was pushed"
         }
-        //    else{
-        //    }
+        else{
+            self.message = "List Full. Cannot push"
+        }
     }
     
-    func peek() -> Int {
-        if tail != -1{
-            return self.stackArray[self.tail]
-        }
-        else {
-            return 0
-        }
-    }
 }
