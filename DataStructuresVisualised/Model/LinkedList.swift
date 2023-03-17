@@ -62,6 +62,12 @@ class LinkedList: ObservableObject{
                 currentItem = currentItem?.next
                 self.message = "\(data) was removed from the list"
             }
+            if currentItem == nil{
+                self.message = "\(data) was not in the list"
+            }
+            else{
+                self.message = "\(data) was removed from the list"
+            }
             previousItem?.next = currentItem?.next
         }
         

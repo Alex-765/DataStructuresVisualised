@@ -8,29 +8,137 @@
 import XCTest
 @testable import DataStructuresVisualised
 
-final class DataStructuresVisualisedTests: XCTestCase {
+class DataStructuresVisualisedTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testPushingStack() {
+        let stack = Stack(length: 5)
+        stack.push(item: 5)
+        stack.push(item: 8)
+        stack.push(item: 4)
+        let expected = [5,8,4,0,0]
+        let actual = stack.stackArray
+        
+        XCTAssertEqual(expected,actual)
+    }
+    
+    func testPushingFullStack() {
+        let stack = Stack(length: 1)
+        stack.push(item: 5)
+        stack.push(item: 8)
+        let expected = "Stack Full. Cannot push"
+        let actual = stack.message
+        
+        XCTAssertEqual(expected,actual)
+    }
+    
+    func testPoppingEmptyStack() {
+        let stack = Stack(length: 5)
+        stack.pop()
+        let expected = "Empty Stack. Cannot pop"
+        let actual = stack.message
+        
+        XCTAssertEqual(expected,actual)
+    }
+    
+    func testPoppingFilledStack() {
+        let stack = Stack(length: 5)
+        stack.push(item: 5)
+        stack.pop()
+        let expected = "5 was popped"
+        let actual = stack.message
+        
+        XCTAssertEqual(expected,actual)
+    }
+    
+    func testPushingQueue() {
+        let queue = Queue(length: 5)
+        queue.push(item: 5)
+        queue.push(item: 8)
+        queue.push(item: 4)
+        let expected = [5,8,4,0,0]
+        let actual = queue.stackArray
+        
+        XCTAssertEqual(expected,actual)
+    }
+    
+    func testPushingFullQueue() {
+        let queue = Queue(length: 1)
+        queue.push(item: 5)
+        queue.push(item: 8)
+        let expected = "Queue Full. Cannot push"
+        let actual = queue.message
+        
+        XCTAssertEqual(expected,actual)
+    }
+    
+    func testPoppingEmptyQueue() {
+        let queue = Queue(length: 5)
+        queue.pop()
+        let expected = "Empty Queue. Cannot pop"
+        let actual = queue.message
+        
+        XCTAssertEqual(expected,actual)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testPoppingFilledQueue() {
+        let queue = Queue(length: 5)
+        queue.push(item: 5)
+        queue.push(item: 8)
+        queue.pop()
+        let expected = "5 was popped"
+        let actual = queue.message
+        
+        XCTAssertEqual(expected,actual)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testAddNodeLinkedList(){
+        let linkedList = LinkedList()
+        linkedList.addNode(data: "5")
+        
+        let expected = "5 was added to the list"
+        let actual = linkedList.message
+        
+        XCTAssertEqual(expected,actual)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testTraverseLinkedList(){
+        let linkedList = LinkedList()
+        linkedList.addNode(data: "5")
+        linkedList.addNode(data: "4")
+        
+        let expected = linkedList.traverse()
+        let actual = ["5","4"]
+        
+        XCTAssertEqual(expected,actual)
     }
-
+    
+    func testremoveEmptyLinkedList(){
+        let linkedList = LinkedList()
+        linkedList.removeNode(data: "5")
+        
+        let expected = "5 was not in the list"
+        let actual = linkedList.message
+        
+        XCTAssertEqual(expected,actual)
+    }
+    func testremoveFilledLinkedList(){
+        let linkedList = LinkedList()
+        linkedList.addNode(data: "5")
+        linkedList.removeNode(data: "5")
+        
+        let expected = "5 was removed from the list"
+        let actual = linkedList.message
+        
+        XCTAssertEqual(expected,actual)
+    }
+    func testremoveValueNotInLinkedList(){
+        let linkedList = LinkedList()
+        linkedList.addNode(data: "5")
+        linkedList.removeNode(data: "7")
+        
+        let expected = "7 was not in the list"
+        let actual = linkedList.message
+        
+        XCTAssertEqual(expected,actual)
+    }
 }

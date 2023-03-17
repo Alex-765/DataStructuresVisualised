@@ -26,7 +26,7 @@ class Stack: ObservableObject{
             self.tail -= 1
         }
             else{
-                self.message = "Empty List. Cannot pop"
+                self.message = "Empty Stack. Cannot pop"
             }
     }
     
@@ -37,7 +37,7 @@ class Stack: ObservableObject{
             self.message = "\(String(stackArray[tail])) was pushed"
         }
         else{
-            self.message = "List Full. Cannot push"
+            self.message = "Stack Full. Cannot push"
         }
     }
     

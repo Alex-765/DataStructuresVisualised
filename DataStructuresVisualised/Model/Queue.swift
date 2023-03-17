@@ -32,7 +32,7 @@ class Queue: ObservableObject{
             self.head += 1
         }
         else{
-            self.message = "Empty List. Cannot pop"
+            self.message = "Empty Queue. Cannot pop"
         }
     }
     
@@ -43,7 +43,7 @@ class Queue: ObservableObject{
             self.message = "\(String(stackArray[tail])) was pushed"
         }
         else{
-            self.message = "List Full. Cannot push"
+            self.message = "Queue Full. Cannot push"
         }
     }
 }
